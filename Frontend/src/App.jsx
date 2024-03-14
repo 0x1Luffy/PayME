@@ -6,7 +6,6 @@ import SendMoney from "./pages/SendMoney";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Home from './pages/Home';
-import PinKeypad from "./pages/Upi";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
