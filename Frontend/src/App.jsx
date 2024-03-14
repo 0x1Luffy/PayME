@@ -6,12 +6,13 @@ import SendMoney from "./pages/SendMoney";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Home from './pages/Home';
+import { baseURL } from "../URLs";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(()=>{
     async function fetch(){
-      const response= await axios.get("http://localhost:3000/api/v1/me",{
+      const response= await axios.get(`${baseURL}/api/v1/me`,{
       headers:{
         Authorization:"Bearer "+ localStorage.getItem("token")
       }

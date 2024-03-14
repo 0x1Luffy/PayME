@@ -5,6 +5,7 @@ import Head from "../components/Head";
 import InputBox from "../components/InputBox";
 import SubHeading from "../components/SubHeading";
 import axios from "axios";
+import { baseURL } from "../../URLs";
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setlastName] = useState("");
@@ -34,7 +35,7 @@ const Signup = () => {
 
           <div className="pt-4">
             <Button onPress={async ()=>{
-              const response = await axios.post("http://localhost:3000/api/v1/user/signup",
+              const response = await axios.post(`${baseURL}/api/v1/user/signup`,
               {
                 username,
                 firstName,
