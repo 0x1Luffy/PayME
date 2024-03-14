@@ -12,7 +12,7 @@ import Button from "./Button";
      .then(response=>{
       setUsers(response.data.user);
      })
-  },[]);
+  });
 
   return (
     <>
