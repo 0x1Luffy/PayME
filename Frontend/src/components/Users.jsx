@@ -2,13 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
-
+import { baseURL } from "../../URLs";
 
  export const Users = () => {
   const [users, setUsers] = useState([]);
   const [filter, setFilter] = useState("");
   useEffect( ()=>{
-     axios.get("http://localhost:3000/api/v1/user/bulk?filter=" + filter)
+     axios.get(`${baseURL}/api/v1/user/bulk?filter=` + filter)
      .then(response=>{
       setUsers(response.data.user);
      })
