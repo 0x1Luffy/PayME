@@ -12,7 +12,7 @@ app.use("/api/v1", mainRouter);  // all the requests which will come to /api/v1 
 
 try {
     app.listen(3000);
-    console.log("Server Started On Localhost 3000");
+    console.log("Server Started");
 } catch (error) {
     error.message("Error Occured!!")
 }
