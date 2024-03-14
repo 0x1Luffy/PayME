@@ -10,22 +10,28 @@ import { baseURL } from "../URLs";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  useEffect(()=>{
-    async function fetch(){
-      const response= await axios.get(`${baseURL}/api/v1/me`,{
-      headers:{
-        Authorization:"Bearer "+ localStorage.getItem("token")
+  useEffect(() => {
+    async function fetchUserData() {
+      try {
+        const response = await axios.get(`${baseURL}/api/v1/me`, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        });
+  
+        if (response.data.authentication) {
+          setIsAuthenticated(true);
+        } else {
+          setIsAuthenticated(false);
+        }
+      } catch (error) {
+        alert("Error fetching user data:", error);
+        setIsAuthenticated(false);
       }
-    })
-    if(response.data.authentication){
-      setIsAuthenticated(true);
     }
-    else {
-      setIsAuthenticated(false);
-    }
-    }
-    fetch(); 
-  },[])
+  
+    fetchUserData();
+  }, []);
 
   return (
     <BrowserRouter>
