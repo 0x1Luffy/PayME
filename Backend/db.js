@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 try {
-    mongoose.connect("Your Mongo Instance URL Here");
+    mongoose.connect("mongodb+srv://chetankesare06:iamchetan@paytm1.snrwkok.mongodb.net/");
     
 } catch (error) {
     console.log(error)
