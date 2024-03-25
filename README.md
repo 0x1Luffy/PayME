@@ -3,7 +3,7 @@
 PayMe is a comprehensive MERN (MongoDB, Express.js, React.js, Node.js) application designed to emulate online payment functionalities similar to leading platforms like Paytm. With PayMe, users can effortlessly send money to friends and other users, view transaction histories, and track account balances before and after transactions. Experience seamless online transactions with PayMe.
 
 <div align="center">
-  <img src="https://your-image-url-here.com" alt="PayMe Logo">
+  <img src="https://i.ibb.co/6YG4Wf5/background.jpg" alt="PayMe Logo">
 </div>
 
 ## Setup Instructions
