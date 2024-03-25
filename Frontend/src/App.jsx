@@ -9,30 +9,13 @@ import Home from './pages/Home';
 import { baseURL } from "../URLs";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const token = localStorage.getItem('token');
   useEffect(() => {
-    async function fetchUserData() {
-      try {
-        const response = await axios.get(`${baseURL}/api/v1/me`, {
-          headers: {
-            Authorization: "Bearer " + localStorage.getItem("token"),
-          },
-        });
-  
-        if (response.data.authentication) {
-          setIsAuthenticated(true);
-        } else {
-          setIsAuthenticated(false);
-        }
-      } catch (error) {
-        alert("Error fetching user data:", error);
-        setIsAuthenticated(false);
-      }
-    }
-  
-    fetchUserData();
-  }, []);
+    if (token && window.location.pathname !== '/dashboard') {
 
+      window.location.href = '/dashboard';
+    }
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
